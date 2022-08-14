@@ -1,16 +1,20 @@
 package main
 
 import (
+	"flag"
 	"fmt"
+	"os"
 	"reflect"
+	"regexp"
 	"runtime"
+	"strings"
 	"sync"
 	"time"
 )
 
-const (
+var (
 	// The range of values for n passed to the individual benchmarks
-	start, end, step int = 100000, 3000000, 100000
+	start, end, step int
 )
 
 var (
@@ -18,6 +22,14 @@ var (
 	testByteString = []byte(fmt.Sprint("test value"))
 	test10Kilobyte = make([]byte, 10240)
 )
+
+func init() {
+	flag.IntVar(&start, "flagname", 100000, "help message for flagname")
+	flag.IntVar(&end, "end", 3000000, "help message for flagname")
+	flag.IntVar(&step, "step", 100000, "help message for flagname")
+}
+
+var filter = flag.String("filter", ".*", "comma separated regexps to filter run test cases")
 
 // timeTrack will print out the number of nanoseconds since the start time divided by n
 // Useful for printing out how long each iteration took in a benchmark
@@ -46,17 +58,39 @@ func runIterations(name string, start, end, step int, f func(int)) {
 	fmt.Println()
 }
 
+func matchFuncName(filters []string, name string) bool {
+	for _, f := range filters {
+		m, err := regexp.MatchString(f, name)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Invalid filter '%v'", f)
+			os.Exit(1)
+		}
+		if m {
+			return true
+		}
+	}
+	return false
+}
+
 func main() {
+	flag.Parse()
 	// first, print the CSV header with iteration counts
 	runIterations("iterations", start, end, step, iterations)
-
-	allFunctions := append(seanFunctions, zhenjlFunctions...)
-	allFunctions = append(allFunctions, mtchavezFunctions...)
-	allFunctions = append(allFunctions, huanduFunctions...)
+	var allFunctions []func(int)
+	allFunctions = append(allFunctions, chen3fengFunctions...)
 	allFunctions = append(allFunctions, colFunctions...)
+	allFunctions = append(allFunctions, huanduFunctions...)
+	allFunctions = append(allFunctions, liyue201Functions...)
+	allFunctions = append(allFunctions, mtchavezFunctions...)
+	allFunctions = append(allFunctions, mtFunctions...)
+	allFunctions = append(allFunctions, seanFunctions...)
 	allFunctions = append(allFunctions, ryszardFunctions...)
 
+	filters := strings.Split(*filter, ",")
 	for _, f := range allFunctions {
-		runIterations(funcName(f), start, end, step, f)
+		fname := funcName(f)
+		if matchFuncName(filters, fname) {
+			runIterations(fname, start, end, step, f)
+		}
 	}
 }
