@@ -53,9 +53,9 @@ go install github.com/sean-public/skiplist-survey
 skiplist-survey > output.csv
 ```
 
-Chen3feng tested on a MacBook Pro with Apple M1 Pro chip, 32GB Memory.
+Chen3feng tested on a MacBook Pro with Apple M1 Pro chip, 32 GB Memory.
 
-The following tables are the result (the less the better, unit: us/op), I have no time to make a graph.
+The following tables are the result (the less the better, unit: us/op), I have no time to make them graphs.
 
 #### Inserts
 
