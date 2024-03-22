@@ -57,24 +57,24 @@ func funcName(f func(int)) string {
 
 // runIterations executes the tests in a loop with the given parameters
 func runIterations(fname string, start, end, step int, f func(int)) {
-	var arr []int64
-	if strings.HasSuffix("Inserts", fname) && !strings.HasPrefix("WorstInserts", fname) {
-		arr = insertMap[fname]
-	} else if strings.HasSuffix("WorstInserts", fname) {
-		arr = worstInsertMap[fname]
-	} else if strings.HasSuffix("AvgSearch", fname) {
-		arr = avgSearchMap[fname]
-	} else if strings.HasSuffix("SearchEnd", fname) {
-		arr = searchEndMap[fname]
-	} else if strings.HasSuffix("Delete", fname) && !strings.HasPrefix("WorstDeletes", fname) {
-		arr = deleteMap[fname]
-	} else if strings.HasSuffix("WorstDelete", fname) {
-		arr = worstDeleteMap[fname]
-	}
-
+	var arr = make([]int64, 0, 16)
 	for i := start; i <= end; i += step {
 		f(i)
-		arr = append(arr, <-dataC)
+		data := <-dataC
+		arr = append(arr, data)
+	}
+	if strings.HasSuffix("Inserts", fname) && !strings.HasPrefix("WorstInserts", fname) {
+		insertMap[fname] = arr
+	} else if strings.HasSuffix("WorstInserts", fname) {
+		worstInsertMap[fname] = arr
+	} else if strings.HasSuffix("AvgSearch", fname) {
+		avgSearchMap[fname] = arr
+	} else if strings.HasSuffix("SearchEnd", fname) {
+		searchEndMap[fname] = arr
+	} else if strings.HasSuffix("Delete", fname) && !strings.HasPrefix("WorstDeletes", fname) {
+		deleteMap[fname] = arr
+	} else if strings.HasSuffix("WorstDelete", fname) {
+		worstDeleteMap[fname] = arr
 	}
 }
 
@@ -116,23 +116,6 @@ func main() {
 	allFunctions = append(allFunctions, ryszardFunctions...)
 
 	filters := strings.Split(*filter, ",")
-	for _, f := range allFunctions {
-		fname := funcName(f)
-		if strings.HasSuffix("Inserts", fname) && !strings.HasPrefix("WorstInserts", fname) {
-			insertMap[fname] = make([]int64, 0, 16)
-		} else if strings.HasSuffix("WorstInserts", fname) {
-			worstInsertMap[fname] = make([]int64, 0, 16)
-		} else if strings.HasSuffix("AvgSearch", fname) {
-			avgSearchMap[fname] = make([]int64, 0, 16)
-		} else if strings.HasSuffix("SearchEnd", fname) {
-			searchEndMap[fname] = make([]int64, 0, 16)
-		} else if strings.HasSuffix("Delete", fname) {
-			deleteMap[fname] = make([]int64, 0, 16)
-		} else if strings.HasSuffix("WorstDelete", fname) {
-			worstDeleteMap[fname] = make([]int64, 0, 16)
-		}
-	}
-
 	for _, f := range allFunctions {
 		fname := funcName(f)
 		if matchFuncName(filters, fname) {
