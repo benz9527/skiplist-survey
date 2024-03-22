@@ -13,8 +13,8 @@ github.com/huandu/go-assert v1.1.5 h1:fjemmA7sSfYHJD7CUqs9qTwwfdNAx7/j2/ZlHXzNB3
 github.com/huandu/go-assert v1.1.5/go.mod h1:yOLvuqZwmcHIC5rIzrBhT7D3Q9c3GFnd0JrPVhn/06U=
 github.com/huandu/skiplist v1.2.0 h1:gox56QD77HzSC0w+Ws3MH3iie755GBJU1OER3h5VsYw=
 github.com/huandu/skiplist v1.2.0/go.mod h1:7v3iFjLcSAzO4fN5B8dvebvo/qsfumiLiDXMrPiHF9w=
-github.com/liyue201/gostl v1.2.0 h1:hiijDhO7u/hpJ9/UX7ffW8cbKCnOMn+eu5U79MJE0b8=
-github.com/liyue201/gostl v1.2.0/go.mod h1:hmiO0/B1JgfZWtzpst0Y4VSu11iJvM6jHnRvINYB6Sg=
+github.com/liyue201/gostl v1.0.1 h1:VQdvogZ90WpCb5WdG9UxS6r5ulnYEp8VfEMEZXVtpIs=
+github.com/liyue201/gostl v1.0.1/go.mod h1:rgK+T1a0sQ1+CsAonfuD1J8C4iuGfOU9VAt9mmR/m10=
 github.com/mtchavez/skiplist v0.0.0-20180726135747-e84de0992d21 h1:THHCEJ9KciduRXIIbp71rR3e2QYDJK7gjPmHFxbDSWQ=
 github.com/mtchavez/skiplist v0.0.0-20180726135747-e84de0992d21/go.mod h1:SERa1tQlV0yNIv3Dt2+Dv8YxeXorS4ySs8I147Zq+lo=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
