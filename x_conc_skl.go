@@ -17,6 +17,7 @@ func xConcSklNew() list.SkipList[int, string] {
 			}
 			return 1
 		},
+		list.WithXConcSklDataNodeUniqueMode[int, string](),
 	)
 	if err != nil {
 		panic(err)
