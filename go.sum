@@ -1,7 +1,7 @@
 github.com/MauriceGit/skiplist v0.0.0-20211105230623-77f5c8d3e145 h1:1yw6O62BReQ+uA1oyk9XaQTvLhcoHWmoQAgXmDFXpIY=
 github.com/MauriceGit/skiplist v0.0.0-20211105230623-77f5c8d3e145/go.mod h1:877WBceefKn14QwVVn4xRFUsHsZb9clICgdeTj4XsUg=
-github.com/benz9527/xboot v0.0.0-20240322120629-7ba560a5d535 h1:wGCqejfRK2/5WiRsNosFdTxSILvSz4MysiB+sIV2DR0=
-github.com/benz9527/xboot v0.0.0-20240322120629-7ba560a5d535/go.mod h1:GxTG9+tY4mAbFwWExJ1eGyeksIdSCK5s4EyKyEPQnT8=
+github.com/benz9527/xboot v0.0.0-20240322134058-fb68a7cb3ae5 h1:f2L/IU5cvGGe/rygab3gAdODLAd+a5Yo3Xp/YM2ycHs=
+github.com/benz9527/xboot v0.0.0-20240322134058-fb68a7cb3ae5/go.mod h1:GxTG9+tY4mAbFwWExJ1eGyeksIdSCK5s4EyKyEPQnT8=
 github.com/chen3feng/stl4go v0.1.1 h1:0L1+mDw7pomftKDruM23f1mA7miavOj6C6MZeadzN2Q=
 github.com/chen3feng/stl4go v0.1.1/go.mod h1:5ml3psLgETJjRJnMbPE+JiHLrCpt+Ajc2weeTECXzWU=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
