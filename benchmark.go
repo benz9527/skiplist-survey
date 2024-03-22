@@ -66,7 +66,7 @@ func runIterations(fname string, start, end, step int, f func(int)) {
 		arr = avgSearchMap[fname]
 	} else if strings.HasSuffix("SearchEnd", fname) {
 		arr = searchEndMap[fname]
-	} else if strings.HasSuffix("Delete", fname) {
+	} else if strings.HasSuffix("Delete", fname) && !strings.HasPrefix("WorstDeletes", fname) {
 		arr = deleteMap[fname]
 	} else if strings.HasSuffix("WorstDelete", fname) {
 		arr = worstDeleteMap[fname]
