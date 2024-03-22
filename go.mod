@@ -1,4 +1,4 @@
-module skiplist-survey
+module github.com/benz9527/skiplist-survey
 
 go 1.22.0
 
