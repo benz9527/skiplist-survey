@@ -77,6 +77,9 @@ func main() {
 	// first, print the CSV header with iteration counts
 	runIterations("iterations", start, end, step, iterations)
 	var allFunctions []func(int)
+	allFunctions = append(allFunctions, xComSklFunctions...)
+	allFunctions = append(allFunctions, xConcSklFunctions...)
+
 	allFunctions = append(allFunctions, chen3fengFunctions...)
 	allFunctions = append(allFunctions, colFunctions...)
 	allFunctions = append(allFunctions, huanduFunctions...)
