@@ -6,12 +6,8 @@ import (
 	"github.com/benz9527/xboot/lib/list"
 )
 
-var (
-	testString = string(testByteString)
-)
-
-func xComSklNew() list.SkipList[int, string] {
-	skl, err := list.NewSkl[int, string](
+func xComSklNew() list.SkipList[int, []byte] {
+	skl, err := list.NewSkl[int, []byte](
 		list.XComSkl,
 		func(i, j int) int64 {
 			if i == j {
@@ -33,7 +29,7 @@ func xComSklInserts(n int) {
 	defer timeTrack(time.Now(), n)
 
 	for i := 0; i < n; i++ {
-		skl.Insert(n-i, testString)
+		skl.Insert(n-i, testByteString)
 	}
 }
 
@@ -42,7 +38,7 @@ func xComSklWorstInserts(n int) {
 	defer timeTrack(time.Now(), n)
 
 	for i := 0; i < n; i++ {
-		skl.Insert(i, testString)
+		skl.Insert(i, testByteString)
 	}
 }
 
@@ -50,7 +46,7 @@ func xComSklAvgSearch(n int) {
 	skl := xComSklNew()
 
 	for i := 0; i < n; i++ {
-		skl.Insert(i, testString)
+		skl.Insert(i, testByteString)
 	}
 
 	defer timeTrack(time.Now(), n)
@@ -64,7 +60,7 @@ func xComSklSearchEnd(n int) {
 	skl := xComSklNew()
 
 	for i := 0; i < n; i++ {
-		skl.Insert(i, testString)
+		skl.Insert(i, testByteString)
 	}
 
 	defer timeTrack(time.Now(), n)
@@ -78,7 +74,7 @@ func xComSklDelete(n int) {
 	skl := xComSklNew()
 
 	for i := 0; i < n; i++ {
-		skl.Insert(i, testString)
+		skl.Insert(i, testByteString)
 	}
 
 	defer timeTrack(time.Now(), n)
@@ -92,7 +88,7 @@ func xComSklWorstDelete(n int) {
 	skl := xComSklNew()
 
 	for i := 0; i < n; i++ {
-		skl.Insert(i, testString)
+		skl.Insert(i, testByteString)
 	}
 
 	defer timeTrack(time.Now(), n)

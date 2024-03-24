@@ -6,8 +6,8 @@ import (
 	"github.com/benz9527/xboot/lib/list"
 )
 
-func xConcSklNew() list.SkipList[int, string] {
-	skl, err := list.NewSkl[int, string](
+func xConcSklNew() list.SkipList[int, []byte] {
+	skl, err := list.NewSkl[int, []byte](
 		list.XConcSkl,
 		func(i, j int) int64 {
 			if i == j {
@@ -17,7 +17,7 @@ func xConcSklNew() list.SkipList[int, string] {
 			}
 			return 1
 		},
-		list.WithXConcSklDataNodeUniqueMode[int, string](),
+		list.WithXConcSklDataNodeUniqueMode[int, []byte](true),
 	)
 	if err != nil {
 		panic(err)
@@ -30,7 +30,7 @@ func xConcSklInserts(n int) {
 	defer timeTrack(time.Now(), n)
 
 	for i := 0; i < n; i++ {
-		skl.Insert(n-i, testString)
+		skl.Insert(n-i, testByteString)
 	}
 }
 
@@ -39,7 +39,7 @@ func xConcSklWorstInserts(n int) {
 	defer timeTrack(time.Now(), n)
 
 	for i := 0; i < n; i++ {
-		skl.Insert(i, testString)
+		skl.Insert(i, testByteString)
 	}
 }
 
@@ -47,7 +47,7 @@ func xConcSklAvgSearch(n int) {
 	skl := xConcSklNew()
 
 	for i := 0; i < n; i++ {
-		skl.Insert(i, testString)
+		skl.Insert(i, testByteString)
 	}
 
 	defer timeTrack(time.Now(), n)
@@ -61,7 +61,7 @@ func xConcSklSearchEnd(n int) {
 	skl := xConcSklNew()
 
 	for i := 0; i < n; i++ {
-		skl.Insert(i, testString)
+		skl.Insert(i, testByteString)
 	}
 
 	defer timeTrack(time.Now(), n)
@@ -75,7 +75,7 @@ func xConcSklDelete(n int) {
 	skl := xConcSklNew()
 
 	for i := 0; i < n; i++ {
-		skl.Insert(i, testString)
+		skl.Insert(i, testByteString)
 	}
 
 	defer timeTrack(time.Now(), n)
@@ -89,7 +89,7 @@ func xConcSklWorstDelete(n int) {
 	skl := xConcSklNew()
 
 	for i := 0; i < n; i++ {
-		skl.Insert(i, testString)
+		skl.Insert(i, testByteString)
 	}
 
 	defer timeTrack(time.Now(), n)
