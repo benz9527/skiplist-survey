@@ -106,13 +106,13 @@ func main() {
 	allFunctions = append(allFunctions, xComSklFunctions...)
 	allFunctions = append(allFunctions, xConcSklFunctions...)
 	allFunctions = append(allFunctions, chen3fengFunctions...)
-	allFunctions = append(allFunctions, colFunctions...)
-	allFunctions = append(allFunctions, huanduFunctions...)
-	allFunctions = append(allFunctions, liyue201Functions...)
-	allFunctions = append(allFunctions, mtchavezFunctions...)
-	allFunctions = append(allFunctions, mtFunctions...)
-	allFunctions = append(allFunctions, seanFunctions...)
-	allFunctions = append(allFunctions, ryszardFunctions...)
+	// allFunctions = append(allFunctions, colFunctions...)
+	// allFunctions = append(allFunctions, huanduFunctions...)
+	// allFunctions = append(allFunctions, liyue201Functions...)
+	// allFunctions = append(allFunctions, mtchavezFunctions...)
+	// allFunctions = append(allFunctions, mtFunctions...)
+	// allFunctions = append(allFunctions, seanFunctions...)
+	// allFunctions = append(allFunctions, ryszardFunctions...)
 	
 
 

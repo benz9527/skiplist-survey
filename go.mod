@@ -6,7 +6,7 @@ toolchain go1.22.1
 
 require (
 	github.com/MauriceGit/skiplist v0.0.0-20211105230623-77f5c8d3e145
-	github.com/benz9527/xboot v0.0.0-20240324010539-9f05d462b38c
+	github.com/benz9527/xboot v0.0.0-20240324141928-da5270b27246
 	github.com/chen3feng/stl4go v0.1.1
 	github.com/go-echarts/go-echarts/v2 v2.3.3
 	github.com/golang-collections/go-datastructures v0.0.0-20150211160725-59788d5eb259
