@@ -9,15 +9,7 @@ import (
 func xConcSklNew() list.SkipList[int, []byte] {
 	skl, err := list.NewSkl[int, []byte](
 		list.XConcSkl,
-		func(i, j int) int64 {
-			if i == j {
-				return 0
-			} else if i < j {
-				return -1
-			}
-			return 1
-		},
-		list.WithXConcSklDataNodeUniqueMode[int, []byte](true),
+		list.WithXConcSklDataNodeUniqueMode[int, []byte](),
 	)
 	if err != nil {
 		panic(err)

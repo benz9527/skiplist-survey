@@ -7,17 +7,7 @@ import (
 )
 
 func xComSklNew() list.SkipList[int, []byte] {
-	skl, err := list.NewSkl[int, []byte](
-		list.XComSkl,
-		func(i, j int) int64 {
-			if i == j {
-				return 0
-			} else if i < j {
-				return -1
-			}
-			return 1
-		},
-	)
+	skl, err := list.NewSkl[int, []byte](list.XComSkl)
 	if err != nil {
 		panic(err)
 	}
