@@ -43,24 +43,24 @@ Running the benchmarks found in this repo locally is easy:
 
 #### Inserts
 
-<iframe src="./bench/inserts.html" width="auto" height="auto" frameborder="0"></iframe>
+[https://raw.githack.com/benz9527/skiplist-survey/master/bench/inserts.html](https://raw.githack.com/benz9527/skiplist-survey/master/bench/inserts.html)
 
 #### Worst Insert
 
-<iframe src="https://raw.githack.com/benz9527/skiplist-survey/master/bench/worst-inserts.html" width="auto" height="auto" frameborder="0"></iframe>
+[https://raw.githack.com/benz9527/skiplist-survey/master/bench/worst-inserts.html](https://raw.githack.com/benz9527/skiplist-survey/master/bench/worst-inserts.html)
 
 #### Delete
 
-<iframe src="./bench/deletes.html" width="auto" height="auto" frameborder="0"></iframe>
+[https://raw.githack.com/benz9527/skiplist-survey/master/bench/deletes.html](https://raw.githack.com/benz9527/skiplist-survey/master/bench/deletes.html)
 
 #### Worst Delete
 
-<iframe src="./bench/worst-deletes.html" width="auto" height="auto" frameborder="0"></iframe>
+[https://raw.githack.com/benz9527/skiplist-survey/master/bench/worst-deletes.html](https://raw.githack.com/benz9527/skiplist-survey/master/bench/worst-deletes.html)
 
 #### Average Search
 
-<iframe src="./bench/avg-search.html" width="auto" height="auto" frameborder="0"></iframe>
+[https://raw.githack.com/benz9527/skiplist-survey/master/bench/avg-search.html](https://raw.githack.com/benz9527/skiplist-survey/master/bench/avg-search.html)
 
 #### Search End
 
-<iframe src="./bench/search-end.html" width="auto" height="auto" frameborder="0"></iframe>
+[https://raw.githack.com/benz9527/skiplist-survey/master/bench/search-end.html](https://raw.githack.com/benz9527/skiplist-survey/master/bench/search-end.html)
