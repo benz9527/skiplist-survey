@@ -6,7 +6,7 @@ toolchain go1.22.1
 
 require (
 	github.com/MauriceGit/skiplist v0.0.0-20211105230623-77f5c8d3e145
-	github.com/benz9527/xboot v0.0.0-20240402151131-b071f3fa7310
+	github.com/benz9527/xboot v0.0.0-20240402152202-18dd7b1a1d9d
 	github.com/chen3feng/stl4go v0.1.1
 	github.com/go-echarts/go-echarts/v2 v2.3.3
 	github.com/golang-collections/go-datastructures v0.0.0-20150211160725-59788d5eb259
@@ -19,6 +19,7 @@ require (
 )
 
 require (
+	github.com/stretchr/objx v0.5.2 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/sys v0.18.0 // indirect
 )

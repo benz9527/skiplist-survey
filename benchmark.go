@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"path/filepath"
 	"reflect"
 	"regexp"
 	"runtime"
@@ -71,7 +72,7 @@ func runIterations(fname string, start, end, step int, f func(int)) {
 		avgSearchMap[fname] = arr
 	} else if strings.HasSuffix(fname, "SearchEnd") {
 		searchEndMap[fname] = arr
-	} else if !strings.HasSuffix(fname, "WorstDelete") && strings.HasSuffix(fname, "Delete")  {
+	} else if !strings.HasSuffix(fname, "WorstDelete") && strings.HasSuffix(fname, "Delete") {
 		deleteMap[fname] = arr
 	} else if strings.HasSuffix(fname, "WorstDelete") {
 		worstDeleteMap[fname] = arr
@@ -106,15 +107,13 @@ func main() {
 	allFunctions = append(allFunctions, xComSklFunctions...)
 	allFunctions = append(allFunctions, xConcSklFunctions...)
 	allFunctions = append(allFunctions, chen3fengFunctions...)
-	// allFunctions = append(allFunctions, colFunctions...)
-	// allFunctions = append(allFunctions, huanduFunctions...)
-	// allFunctions = append(allFunctions, liyue201Functions...)
-	// allFunctions = append(allFunctions, mtchavezFunctions...)
-	// allFunctions = append(allFunctions, mtFunctions...)
-	// allFunctions = append(allFunctions, seanFunctions...)
-	// allFunctions = append(allFunctions, ryszardFunctions...)
-	
-
+	allFunctions = append(allFunctions, colFunctions...)
+	allFunctions = append(allFunctions, huanduFunctions...)
+	allFunctions = append(allFunctions, liyue201Functions...)
+	allFunctions = append(allFunctions, mtchavezFunctions...)
+	allFunctions = append(allFunctions, mtFunctions...)
+	allFunctions = append(allFunctions, seanFunctions...)
+	allFunctions = append(allFunctions, ryszardFunctions...)
 
 	filters := strings.Split(*filter, ",")
 	for _, f := range allFunctions {
@@ -138,8 +137,11 @@ func main() {
 		}
 		line.AddSeries(k, items)
 	}
-	// Where the magic happens
-	f, _ := os.Create("inserts.html")
+	path, err := filepath.Abs("./bench/inserts.html")
+	if err != nil {
+		panic(err)
+	}
+	f, _ := os.Create(path)
 	line.Render(f)
 	f.Close()
 
@@ -157,8 +159,11 @@ func main() {
 		}
 		line.AddSeries(k, items)
 	}
-	// Where the magic happens
-	f, _ = os.Create("worst-inserts.html")
+	path, err = filepath.Abs("./bench/worst-inserts.html")
+	if err != nil {
+		panic(err)
+	}
+	f, _ = os.Create(path)
 	line.Render(f)
 	f.Close()
 
@@ -177,8 +182,11 @@ func main() {
 		}
 		line.AddSeries(k, items)
 	}
-	// Where the magic happens
-	f, _ = os.Create("avg-search.html")
+	path, err = filepath.Abs("./bench/avg-search.html")
+	if err != nil {
+		panic(err)
+	}
+	f, _ = os.Create(path)
 	line.Render(f)
 	f.Close()
 
@@ -195,8 +203,11 @@ func main() {
 		}
 		line.AddSeries(k, items)
 	}
-	// Where the magic happens
-	f, _ = os.Create("search-end.html")
+	path, err = filepath.Abs("./bench/search-end.html")
+	if err != nil {
+		panic(err)
+	}
+	f, _ = os.Create(path)
 	line.Render(f)
 	f.Close()
 
@@ -214,8 +225,11 @@ func main() {
 		}
 		line.AddSeries(k, items)
 	}
-	// Where the magic happens
-	f, _ = os.Create("deletes.html")
+	path, err = filepath.Abs("./bench/deletes.html")
+	if err != nil {
+		panic(err)
+	}
+	f, _ = os.Create(path)
 	line.Render(f)
 	f.Close()
 
@@ -233,8 +247,11 @@ func main() {
 		}
 		line.AddSeries(k, items)
 	}
-	// Where the magic happens
-	f, _ = os.Create("worst-deletes.html")
+	path, err = filepath.Abs("./bench/worst-deletes.html")
+	if err != nil {
+		panic(err)
+	}
+	f, _ = os.Create(path)
 	line.Render(f)
 	f.Close()
 
