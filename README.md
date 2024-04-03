@@ -41,23 +41,13 @@ Here are some brief notes on each implementation:
 
 Running the benchmarks found in this repo locally is easy:
 
-```sh
-go get github.com/sean-public/skiplist-survey
-go install github.com/sean-public/skiplist-survey
-skiplist-survey > output.csv
-```
-
-Chen3feng tested on a MacBook Pro with Apple M1 Pro chip, 32 GB Memory.
-
-The following tables are the result (the less the better, unit: us/op), I have no time to make them graphs.
-
 #### Inserts
 
 <iframe src="./bench/inserts.html" width="auto" height="auto" frameborder="0"></iframe>
 
 #### Worst Insert
 
-<iframe src="./bench/worst-inserts.html" width="auto" height="auto" frameborder="0"></iframe>
+<iframe src="https://raw.githack.com/benz9527/skiplist-survey/master/bench/worst-inserts.html" width="auto" height="auto" frameborder="0"></iframe>
 
 #### Delete
 
